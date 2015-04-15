@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Click a button to roll"
+                    android:textSize="24sp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="16dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:layout_gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <Button
+                            android:layout_width="96dp"
+                            android:layout_height="48dp"
+                            android:text="2"
+                            android:layout_margin="2dp"
+                            android:id="@+id/button2"/>
+
+                        <Button
+                            android:layout_width="96dp"
+                            android:layout_height="48dp"
+                            android:text="6"
+                            android:layout_margin="2dp"
+                            android:id="@+id/button6"/>
+
+                        <Button
+                            android:layout_width="96dp"
+                            android:layout_height="48dp"
+                            android:text="12"
+                            android:id="@+id/button12"
+                            android:layout_margin="2dp"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+
+                        <Button
+                            android:layout_width="96dp"
+                            android:layout_height="48dp"
+                            android:text="3"
+                            android:id="@+id/button3"
+                            android:layout_margin="2dp"/>
+
+                        <Button
+                            android:layout_width="96dp"
+                            android:layout_height="48dp"
+                            android:id="@+id/button8"
+                            android:text="8"
+                            android:layout_margin="2dp"/>
+
+                        <Button
+                            android:layout_width="96dp"
+                            android:layout_height="48dp"
+                            android:text="20"
+                            android:id="@+id/button20"
+                            android:layout_margin="2dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <Button
+                            android:layout_width="96dp"
+                            android:layout_height="48dp"
+                            android:text="4"
+                            android:id="@+id/button4"
+                            android:layout_margin="2dp"/>
+
+                        <Button
+                            android:layout_width="96dp"
+                            android:layout_height="48dp"
+                            android:text="10"
+                            android:id="@+id/button10"
+                            android:layout_margin="2dp"/>
+
+                        <Button
+                            android:layout_width="96dp"
+                            android:layout_height="48dp"
+                            android:text="100"
+                            android:id="@+id/button100"
+                            android:layout_margin="2dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <EditText
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:focusable="false"
+                android:id="@+id/consoleOutput"
+                android:textColor="@color/textLight"
+                android:overScrollMode="always"
+                android:background="@drawable/output"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/drawer_content"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:dividerHeight="1dp"
+        android:background="#fff4f4f4"/>
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Roll\'em</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="openDrawer">Open Drawer</string>
+    <string name="closeDrawer">Close Drawer</string>
+    <string name="thetitle">Advanced Roller</string>
+    <string name="modRoller">Mod Roller</string>
+    <string name="multiRoller">Multi Roller</string>
+    <string name="simpleRoller">Simple Roller</string>
+
+    <string-array name="choice_list">
+        <item>Simple Roller</item>
+        <item>Advanced Roller</item>
+        <item>Mod Roller</item>
+        <item>Multi Roller</item>
+    </string-array>
+
+    <string-array name="dice_list">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>20</item>
+        <item>100</item>
+    </string-array>
+</resources>

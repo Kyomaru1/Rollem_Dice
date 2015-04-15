@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight=".5"
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="How many times?"
+                android:textSize="24sp"
+                android:id="@+id/textView"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_horizontal" />
+
+            <EditText
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/repeatAmount"
+                android:layout_marginBottom="24dp" 
+                android:gravity="center"
+                android:background="@drawable/text_view_background"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="What's the largest size?"
+                android:textSize="24sp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_horizontal" />
+            <EditText
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/diceSize"
+                android:gravity="center"
+                android:background="@drawable/text_view_background"
+                android:layout_marginBottom="24dp" />
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/output"
+                android:id="@+id/output"
+                android:focusable="false"/>
+        </LinearLayout>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="96dp"
+            android:textColor="@color/textDark"
+            android:text="Roll!"
+            android:textSize="36sp"
+            android:background="@color/primary_main"
+            android:id="@+id/rollButton" />
+    </LinearLayout>

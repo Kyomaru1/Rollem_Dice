@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.MenuState"      
+        className = "com.kyostudios.rollem.ModRoller"/>
+      <point      
+        x = "3224"      
+        y = "804"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.kyostudios.rollem.ModRoller"/>
+      <point      
+        x = "2004"      
+        y = "804"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.MenuState"      
+        className = "com.kyostudios.rollem.MainActivity"/>
+      <point      
+        x = "1760"      
+        y = "368"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.kyostudios.rollem.MainActivity"/>
+      <point      
+        x = "540"      
+        y = "368"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.kyostudios.rollem.MultiRoller"/>
+      <point      
+        x = "500"      
+        y = "4240"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.kyostudios.rollem.AdvancedRoller"/>
+      <point      
+        x = "1720"      
+        y = "2860"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>
