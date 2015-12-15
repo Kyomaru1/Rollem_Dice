@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -130,5 +132,11 @@ public class SimpleRoller extends Fragment {
 
         EditText output = (EditText) view.findViewById(R.id.output);
         output.append("Your d" + max + " rolled a " + solution + ".\n");
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+        inflater.inflate(R.menu.menu_main, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }

@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/action_rollAll" android:title="Roll all"
-        android:orderInCategory="99" app:showAsAction="never"
-        android:icon="@drawable/ic_action_action_roll"/>
+    <item android:id="@+id/action_rollAll" android:title="Roll All"
+        android:orderInCategory="101" app:showAsAction="always"
+        android:icon="@android:drawable/ic_media_play" />
 </menu>

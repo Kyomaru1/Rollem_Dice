@@ -4,6 +4,7 @@
         <!-- ...and here we setting appcompat’s color theming attrs -->
         <item name="colorPrimary">@color/primary_main</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/primaryAccent</item>
 
         <!-- The rest of your attributes -->
     </style>

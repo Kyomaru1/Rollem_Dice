@@ -4,4 +4,5 @@
     <item android:id="@+id/action_clearLog" android:title="Clear Log"
         android:orderInCategory="100" app:showAsAction="always"
         android:icon="@drawable/ic_action_action_delete"/>
+
 </menu>

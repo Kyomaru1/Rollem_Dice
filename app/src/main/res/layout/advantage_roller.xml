@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center">
+        <RadioGroup
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Advantage"
+                android:checked="true"
+                android:id="@+id/radio_advantage"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disadvantage"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/output"
+        android:id="@+id/output"
+        android:focusable="false"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="96dp"
+        android:textColor="@color/textDark"
+        android:text="Roll!"
+        android:textSize="36sp"
+        android:background="@color/primary_main"
+        android:id="@+id/rollButton" />
+
+</LinearLayout>

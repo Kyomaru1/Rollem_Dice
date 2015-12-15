@@ -3,10 +3,11 @@ package com.kyostudios.rollem;
 
 import android.support.v4.app.FragmentTransaction;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -16,16 +17,13 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     static int[] currentFragmentPosition = {0};
 
@@ -42,11 +40,10 @@ public class MainActivity extends ActionBarActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                getWindow().setStatusBarColor(getResources().getColor(R.color.primaryDark));
             }
 
             String[] choices = getResources().getStringArray(R.array.choice_list);
-            final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
             setSupportActionBar(toolbar);
             toolbar.setNavigationIcon(R.drawable.ic_drawer);
             Log.d("Testing", "Toolbar setup complete");
@@ -83,7 +80,7 @@ public class MainActivity extends ActionBarActivity {
                                         .commit();
                                 currentFragmentPosition[0] = 0;
                                 getSupportActionBar().setTitle(srFrag.getFragTitle());
-                                toolbar.setTitleTextColor(getResources().getColor(R.color.textDark));
+                                toolbar.setTitleTextColor(ContextCompat.getColor(MainActivity.this, R.color.textDark));
                             } else {
                                 drawerLayout.closeDrawer(drawerList);
                             }
@@ -99,7 +96,7 @@ public class MainActivity extends ActionBarActivity {
                                         .commit();
                                 currentFragmentPosition[0] = 1;
                                 getSupportActionBar().setTitle(adFrag.getFragTitle());
-                                toolbar.setTitleTextColor(getResources().getColor(R.color.textDark));
+                                toolbar.setTitleTextColor(ContextCompat.getColor(MainActivity.this, R.color.textDark));
 
                             } else {
                                 drawerLayout.closeDrawer(drawerList);
@@ -116,15 +113,32 @@ public class MainActivity extends ActionBarActivity {
                                         .commit();
                                 currentFragmentPosition[0] = 2;
                                 getSupportActionBar().setTitle(modFrag.getFragTitle());
-                                toolbar.setTitleTextColor(getResources().getColor(R.color.textDark));
+                                toolbar.setTitleTextColor(ContextCompat.getColor(MainActivity.this, R.color.textDark));
                             } else {
 
                                 drawerLayout.closeDrawer(drawerList);
                             }
 
                             break;
+
                         case 3:
                             if (currentFragmentPosition[0] != 3) {
+                                drawerLayout.closeDrawer(drawerList);
+                                AdvantageRoller advFrag = new AdvantageRoller();
+                                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                                ft.replace(R.id.fragment_landing, advFrag)
+                                        .addToBackStack(AdvantageRoller.getFragTitle())
+                                        .commit();
+                                currentFragmentPosition[0] = 3;
+                                getSupportActionBar().setTitle(advFrag.getFragTitle());
+                                toolbar.setTitleTextColor(ContextCompat.getColor(MainActivity.this, R.color.textDark));
+                            } else {
+                                drawerLayout.closeDrawer(drawerList);
+                            }
+
+                            break;
+                        case 4:
+                            if (currentFragmentPosition[0] != 4) {
                                 drawerLayout.closeDrawer(drawerList);
                                 MultiRoller mtFrag = new MultiRoller();
                                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -132,11 +146,12 @@ public class MainActivity extends ActionBarActivity {
                                         .addToBackStack(MultiRoller.getFragTitle())
                                         .commit();
                                 getSupportActionBar().setTitle(mtFrag.getFragTitle());
-                                toolbar.setTitleTextColor(getResources().getColor(R.color.textDark));
+                                toolbar.setTitleTextColor(ContextCompat.getColor(MainActivity.this, R.color.textDark));
                                 currentFragmentPosition[0] = 3;
                             } else {
                                 drawerLayout.closeDrawer(drawerList);
                             }
+                            drawerLayout.closeDrawer(drawerList);
                             break;
                     }
                 }
@@ -146,6 +161,12 @@ public class MainActivity extends ActionBarActivity {
             ft.add(R.id.fragment_landing, startFragment)
                     .commit();
             getSupportActionBar().setTitle("Simple Roller");
+            if(currentFragmentPosition[0]==4){
+                toolbar.inflateMenu(R.menu.multi_menu);
+            }
+            else{
+                toolbar.inflateMenu(R.menu.menu_main);
+            }
             Log.d("Testing", "Version code is: " + Build.VERSION.SDK_INT + " Lollipop version code is: " + Build.VERSION_CODES.LOLLIPOP);
         }
     }
@@ -154,8 +175,8 @@ public class MainActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.menu_main, menu);
 
-        inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

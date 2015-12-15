@@ -13,9 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import com.melnykov.fab.FloatingActionButton;
-
+import android.support.design.widget.FloatingActionButton;
 import java.util.ArrayList;
 
 /**
@@ -70,7 +68,7 @@ public class MultiRoller extends Fragment implements ConstraintDialog.Constraint
                     onFABClicked();
                 }
             });
-            fab.attachToListView(cardList);
+
         }
 
         ArrayAdapter<ConstraintsContainer> arrayAdapter = new ArrayAdapter<ConstraintsContainer>(getActivity().getApplicationContext(), R.layout.simple_card_list_layout);
@@ -131,7 +129,7 @@ public class MultiRoller extends Fragment implements ConstraintDialog.Constraint
     public void onResume(){
         super.onResume();
         MainActivity main = new MainActivity();
-        main.currentFragmentPosition[0] = 3;
+        main.currentFragmentPosition[0] = 4;
         Log.d("Testing", "Resuming activity with currentFragmentPosition of " + Integer.toString(main.currentFragmentPosition[0]));
     }
 
