@@ -10,6 +10,7 @@
     <string name="modRoller">Mod Roller</string>
     <string name="multiRoller">Multi Roller</string>
     <string name="simpleRoller">Simple Roller</string>
+    <string name="verticalelipse">&#8942;</string>
 
     <string-array name="choice_list">
         <item>Simple Roller</item>

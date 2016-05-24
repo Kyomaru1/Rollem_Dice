@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
                             break;
                         case 4:
-                            if (currentFragmentPosition[0] != 4) {
+                            /*if (currentFragmentPosition[0] != 4) {
                                 drawerLayout.closeDrawer(drawerList);
                                 MultiRoller mtFrag = new MultiRoller();
                                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -147,10 +147,11 @@ public class MainActivity extends AppCompatActivity {
                                         .commit();
                                 getSupportActionBar().setTitle(mtFrag.getFragTitle());
                                 toolbar.setTitleTextColor(ContextCompat.getColor(MainActivity.this, R.color.textDark));
-                                currentFragmentPosition[0] = 3;
+                                currentFragmentPosition[0] = 4;
                             } else {
                                 drawerLayout.closeDrawer(drawerList);
-                            }
+                            }*/
+                            Toast.makeText(getApplicationContext(), "This feature is still in development.", Toast.LENGTH_SHORT).show();
                             drawerLayout.closeDrawer(drawerList);
                             break;
                     }
@@ -160,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.add(R.id.fragment_landing, startFragment)
                     .commit();
-            getSupportActionBar().setTitle("Simple Roller");
+            toolbar.setTitleTextColor(ContextCompat.getColor(MainActivity.this, R.color.textDark));
             if(currentFragmentPosition[0]==4){
                 toolbar.inflateMenu(R.menu.multi_menu);
             }

@@ -5,4 +5,7 @@
     <item android:id="@+id/action_rollAll" android:title="Roll All"
         android:orderInCategory="101" app:showAsAction="always"
         android:icon="@android:drawable/ic_media_play" />
+    <item android:id="@+id/action_clearAll" android:title="Clear All"
+        android:orderInCategory="102" app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_delete"/>
 </menu>

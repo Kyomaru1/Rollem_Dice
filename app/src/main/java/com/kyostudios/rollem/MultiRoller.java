@@ -14,18 +14,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.support.design.widget.FloatingActionButton;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 /**
  * Created by Kyoma_000 on 3/8/2015.
  *
  *
- * FloatingActionButton fabButton = new FloatingActionButton.Builder(this)
-     .withDrawable(getResources().getDrawable(R.drawable.ic_action_add))
-     .withButtonColor(getResources().getColor(R.color.primary))
-     .withGravity(Gravity.BOTTOM | Gravity.RIGHT)
-     .withMargins(0, 0, 16, 16)
-     .create();
  */
 public class MultiRoller extends Fragment implements ConstraintDialog.ConstraintDialogListener{
     ListView cardList;
@@ -51,6 +47,7 @@ public class MultiRoller extends Fragment implements ConstraintDialog.Constraint
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.multi_roller, container, false);
+
         return rootView;
     }
 
@@ -134,7 +131,9 @@ public class MultiRoller extends Fragment implements ConstraintDialog.Constraint
     }
 
     public void onFABClicked(){
-        DialogFragment dialog = new ConstraintDialog();
-        dialog.show(getActivity().getSupportFragmentManager(), "Constraints");
+        /*DialogFragment dialog = new ConstraintDialog();
+        dialog.show(getActivity().getSupportFragmentManager(), "Constraints");*/
+        Toast toast = Toast.makeText(getContext(), "FAB Clicked", Toast.LENGTH_SHORT);
+        toast.show();
     }
 }

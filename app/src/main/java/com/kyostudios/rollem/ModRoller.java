@@ -2,6 +2,7 @@ package com.kyostudios.rollem;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 
 import java.util.Random;
 
@@ -48,6 +50,7 @@ public class ModRoller extends Fragment{
             final EditText modAmount = (EditText) view.findViewById(R.id.modAmount);
             final Spinner diceSize = (Spinner) view.findViewById(R.id.sizeSpinner);
             final EditText output = (EditText) view.findViewById(R.id.output);
+            final SwitchCompat addToEachSwitch = (SwitchCompat) view.findViewById(R.id.addToEachSwitchCompat);
 
 
             ArrayAdapter<CharSequence> diceadapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.dice_list, R.layout.centered_spinner_item);
@@ -60,10 +63,10 @@ public class ModRoller extends Fragment{
                 public void onClick(View v) {
                     if (repsAmount.getText().toString().trim().length() > 0) {
                         if (modAmount.getText().toString().trim().length() > 0) {
-                            rollMultiMod(Integer.parseInt(repsAmount.getText().toString().trim()), Integer.parseInt(diceSize.getSelectedItem().toString().trim()), Integer.parseInt(modAmount.getText().toString().trim()), view);
+                            rollMultiMod(Integer.parseInt(repsAmount.getText().toString().trim()), Integer.parseInt(diceSize.getSelectedItem().toString().trim()), Integer.parseInt(modAmount.getText().toString().trim()), addToEachSwitch.isChecked(), view);
                         }
                         else {
-                            rollMultiMod(Integer.parseInt(repsAmount.getText().toString().trim()), Integer.parseInt(diceSize.getSelectedItem().toString().trim()), 0, view);
+                            rollMultiMod(Integer.parseInt(repsAmount.getText().toString().trim()), Integer.parseInt(diceSize.getSelectedItem().toString().trim()),0, addToEachSwitch.isChecked(), view);
                         }
                     }
                     else {
@@ -85,21 +88,35 @@ public class ModRoller extends Fragment{
         Log.d("Testing", "Resuming activity with currentFragmentPosition of " + Integer.toString(main.currentFragmentPosition[0]));
     }
 
-    public void rollMultiMod(int r, int m, int mod, View view){
-        Random random = new Random();
-        EditText output = (EditText) view.findViewById(R.id.output);
-        int total = 0;
-        output.setText("");
+    public void rollMultiMod(int r, int m, int mod, boolean switchTrue,View view){
+        if(switchTrue){
+            Random random = new Random();
+            EditText output = (EditText) view.findViewById(R.id.output);
+            int total=0;
+            output.setText(null);
 
-        for(int i = 1; i <= r; i++){
-            int current = random.nextInt(m) + 1;
-            total += current;
-            output.append("Roll " + i + ": " + "\t" + current + "\n");
+            for (int i = 1; i <= r; i++){
+                int current = random.nextInt(m) + 1;
+                total += current + mod;
+                output.append("Roll " + i + ": " + "\t" + current + " with a mod of " + mod + "\n");
+            }
+            output.append("Total with mod added to each roll: \t" + total + "\n");
         }
-        total += mod;
-        output.append("Total plus Mod: \t" + total + "\n");
+        else {
+            Random random = new Random();
+            EditText output = (EditText) view.findViewById(R.id.output);
+            int total = 0;
+            output.setText(null);
 
+            for (int i = 1; i <= r; i++) {
+                int current = random.nextInt(m) + 1;
+                total += current;
+                output.append("Roll " + i + ": " + "\t" + current + "\n");
+            }
+            total += mod;
+            output.append("Total plus Mod: \t" + total + "\n");
 
+        }
     }
 
 
